@@ -306,6 +306,29 @@ export default class RangeHandler {
                 document.execCommand(Command.UNLINK, false)
                 break
             }
+            case Command.INSERT_VIDEO: {
+                let height = arg.height
+                let width = arg.width
+                if (height === 0) {
+                    height = 460
+                }
+                if (width === 0) {
+                    width = 380
+                }
+                const id = function randomString(len) {
+                    const $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'    /** **默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+                    const maxPos = $chars.length
+                    let pwd = ''
+                    for (let i = 0; i < len; i++) {
+                        pwd += $chars.charAt(Math.floor(Math.random() * maxPos))
+                    }
+                    return pwd
+                }
+                const videoId = id(10)
+                const videoHtml = `<div style='margin:0 auto;' class='vid-wrapper'><video id="${videoId}" class="video-js" controls preload="load" width="100%" height="100%"><source src="${arg.url}" type="video/mp4"></video></div><div><br/></div>`
+                document.execCommand(Command.INSERT_HTML, false, videoHtml)
+                break
+            }
             default: {
                 document.execCommand(command, false, arg)
                 break

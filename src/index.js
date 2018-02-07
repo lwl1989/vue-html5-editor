@@ -33,24 +33,28 @@ class VueHtml5Editor {
             modules = (() => {
                 const arr = []
                 modules.forEach((m) => {
-                    if (!options.hiddenModules.includes(m.name)) {
-                        arr.push(m)
-                    }
+                    modules.forEach((module) => {
+                        if (!options.hiddenModules.includes(m.name)) {
+                            arr.push(module)
+                        }
+                    })
                 })
                 return arr
-            })()
+            })
         }
         // visible modules
         if (Array.isArray(options.visibleModules)) {
             modules = (() => {
                 const arr = []
-                modules.forEach((module) => {
-                    if (options.visibleModules.includes(module.name)) {
-                        arr.push(module)
-                    }
+                options.visibleModules.forEach((name) => {
+                    modules.forEach((module) => {
+                        if (name === module.name) {
+                            arr.push(module)
+                        }
+                    })
                 })
                 return arr
-            })()
+            })
         }
 
 

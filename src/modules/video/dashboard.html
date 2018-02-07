@@ -1,0 +1,11 @@
+<div>
+    <span>url</span>
+        <input type="text" placeholder="插入外部视频" v-model="outSiteLink" />
+    <br/>
+        <input type="button" value="插入链接" @click="insertVideoUrl" />
+    <br/>
+        <input type="file" id="file" ref="video" @change="videoProcess" accept="video/*"/>
+    <br/>
+        {{file}}
+    <span style="color: red;">{{upload.errorMsg}}</span>
+</div>

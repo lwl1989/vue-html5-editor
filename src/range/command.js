@@ -25,5 +25,7 @@ export default {
     SUBSCRIPT: 'subscript',
     SUPERSCRIPT: 'superscript',
     UNDO: 'undo',
-    UNLINK: 'unlink'
+    UNLINK: 'unlink',
+    INSERT_VIDEO: 'insertVideo',
+    EMOJI: 'emoji'
 }

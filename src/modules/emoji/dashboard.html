@@ -1,0 +1,10 @@
+<div> 
+    <div v-for="(icon,index) in symbols" @click="insertIcon(icon)"
+         style="width:24px;height:24px;display:inline;border:1px solid #cccccc;float: left;margin-left: 2px;cursor:pointer;">
+        <span style="text-align: center;margin-left:5px;">{{icon}}</span> 
+    </div>
+
+    <div style="float: left;padding-left-left: 2px;height: 24px;width: 100%;">
+        <button type="button" @click="closeEmoji">關閉</button>
+    </div>
+</div>

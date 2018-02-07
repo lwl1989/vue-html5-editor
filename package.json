@@ -4,7 +4,7 @@
   "description": "A WYSIWYG text editor base on html5 and vue",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PeakTai/vue-html5-editor"
+    "url": "https://github.com/lwl1989/vue-html5-editor"
   },
   "main": "dist/vue-html5-editor.js",
   "scripts": {
